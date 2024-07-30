@@ -159,15 +159,23 @@
 
 
       <p>Ingresa desde tu dispositivo movil haciendo click en la camara de abajo o copiando el siguiente link:
-        "https://ecommerce-ra-45c38d146ce6.herokuapp.com/cliente/catalogo" para poder escanear el código QR
+        "https://pericena.github.io/declaracion/datos/index3.html" para poder escanear el código QR
+
 
 
       </p>
 
       @if(isset($producto))
-      <a href="{{ route('productrv', ['id1' => $producto->id, 'id2' => $producto->id]) }}" class="text-blue-500 font-bold hover:underline">
+      {{-- <a href="{{ route('productrv', ['id1' => $producto->id, 'id2' => $producto->id]) }}" class="text-blue-500 font-bold hover:underline">
+        <i class='bx bxs-camera bx-md'></i>
+      </a> --}}
+      <a href="https://pericena.github.io/declaracion/datos/index3.html" class="text-blue-500 font-bold hover:underline">
         <i class='bx bxs-camera bx-md'></i>
       </a>
+
+
+      
+
       @endif
     </div>
   </div>

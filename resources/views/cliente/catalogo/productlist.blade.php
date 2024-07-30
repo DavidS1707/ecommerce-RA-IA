@@ -23,33 +23,33 @@
     <div class="row">
       <div class="col-md-5 col-md-push-2">
         <div class="product-preview">
- <a-scene arjs embedded renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector id="scene">
-   <a-assets>
-     <!-- Añadir tu propio modelo 3D (reemplaza 'ruta-de-tu-modelo.glb' por la URL o ruta a tu modelo) -->
-     <a-asset-item id="custom-model" src="{{ asset('public/img/' . $producto->modelo) }}"></a-asset-item>
-
-   </a-assets>
-
-   <a-marker preset="hiro" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="markerA">
-     <!-- Añadir un plano de fondo -->
-     <!-- <a-plane position="0 0 -0.1" rotation="-90 0 0" width="2.5" height="2.5" color="red" shadow="receive: true"></a-plane> -->
-
-     <!-- Agregar tu modelo 3D personalizado -->
-     <a-entity id="custom-model" gltf-model="#custom-model" position="0 0 0" scale="0.03 0.03 0.03" class="clickable" gesture-handler></a-entity>
-
-     <!-- Agregar un título para el modelo -->
-     <a-entity text="value: Tu Modelo 3D; color: red; align: center; width: 4" position="0 0.15 -0.1"></a-entity>
-   </a-marker>
-
-   <a-entity camera></a-entity>
- </a-scene>
-
 
         </div>
       </div>
       <div class="col-md-2 col-md-pull-2">
-        <model-viewer id="miModelViewer" alt="ropa" src="{{ asset('public/img/' . $producto->modelo) }}" ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls ar ar-modes="webxr quick-look" ar-button ar-placement="floor" progress-bar style="width: 100%; height: 400px;">
-        </model-viewer>
+        {{-- <model-viewer id="miModelViewer" alt="ropa" src="{{ asset('public/img/' . $producto->modelo) }}" ar ar-modes="webxr scene-viewer quick-look" seamless-poster shadow-intensity="1" camera-controls ar ar-modes="webxr quick-look" ar-button ar-placement="floor" progress-bar style="width: 100%; height: 400px;">
+        </model-viewer> --}}
+         <a-scene arjs embedded renderer="logarithmicDepthBuffer: true;" vr-mode-ui="enabled: false" gesture-detector id="scene">
+           <a-assets>
+             <!-- Añadir tu propio modelo 3D (reemplaza 'ruta-de-tu-modelo.glb' por la URL o ruta a tu modelo) -->
+             <a-asset-item id="custom-model" src="{{ asset('public/img/' . $producto->modelo) }}"></a-asset-item>
+
+           </a-assets>
+
+           <a-marker preset="hiro" raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;" id="markerA">
+             <!-- Añadir un plano de fondo -->
+             <!-- <a-plane position="0 0 -0.1" rotation="-90 0 0" width="2.5" height="2.5" color="red" shadow="receive: true"></a-plane> -->
+
+             <!-- Agregar tu modelo 3D personalizado -->
+             <a-entity id="custom-model" gltf-model="#custom-model" position="0 0 0" scale="0.03 0.03 0.03" class="clickable" gesture-handler></a-entity>
+
+             <!-- Agregar un título para el modelo -->
+             <a-entity text="value: Tu Modelo 3D; color: red; align: center; width: 4" position="0 0.15 -0.1"></a-entity>
+           </a-marker>
+
+           <a-entity camera></a-entity>
+         </a-scene>
+
       </div>
       <div class="col-md-5" style="color: #000000">
         <div class="product-details">
